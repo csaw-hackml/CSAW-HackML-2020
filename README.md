@@ -46,7 +46,7 @@
    
    
 ## II. Evaluating the backdoored model
-   1. Download the validation data from [here]() and store the data in `data/<dataset filename>/valid.h5` directory.
+   1. Download the validation data from [here](https://drive.google.com/drive/folders/13o2ybRJ1BkGUvfmQEeZqDo1kskyFywab?usp=sharing) and store the data in `data/<dataset filename>/valid.h5` directory.
    2. To evaluate a specific model, execute `eval.py` by running
       `python3 eval.py <clean validation data filename> <backdoored model filename> <model name>`.
       

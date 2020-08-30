@@ -36,8 +36,6 @@
         └── bd_weights.h5
 ```
 
-Validation data can be found [here]().
-
 ## I. Dependencies
    1. Python 3.6.9
    2. Keras 2.3.1
@@ -48,7 +46,7 @@ Validation data can be found [here]().
    
    
 ## II. Evaluating the backdoored model
-   1. Download the validation data from [here] () and store the data in `data/<dataset filename>/valid.h5` directory.
+   1. Download the validation data from [here]() and store the data in `data/<dataset filename>/valid.h5` directory.
    2. To evaluate a specific model, execute `eval.py` by running
       `python3 eval.py <clean validation data filename> <backdoored model filename> <model name>`.
       

@@ -59,4 +59,11 @@
       `python3 eval.py <clean validation data filename> <backdoored model filename> <model name>`.
       
       E.g., `python3 eval.py data/mnist/valid.h5  models/F/bd_net.h5 F`.
-   3. Clean data classification accuracy will be printed.
+   3. Clean data classification accuracy on the provided validation dataset will be printed as noted below:
+      Model A - 98.59%
+      Model B - 89.22%
+      Model C - 88.96%
+      Model D - 95.82%
+      Model E - 96.26%
+      Model F - 97.82%
+      Model G - 97.11%

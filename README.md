@@ -45,13 +45,13 @@
    6. TensorFlow-gpu 1.15.2
    
 ## II. Backdoored Models Description
-   A - Feature Space Attack on German Traffic Sign Recognition Benchmarck (GTSRB) Dataset
-   B - Trigger Combination Attack on CIFAR-10 Dataset
-   C - Clean Label Attack on MNIST Dataset
-   D - Multi-Trigger Single-Target Attack on YouTube Face Dataset
-   E - Multi-Trigger Multi-Target Attack on YouTube Face Dataset
-   F - All-All Attack on MNIST Dataset
-   G - Moving trigger on YouTube Face Dataset
+   A - Feature Space Attack on German Traffic Sign Recognition Benchmarck (GTSRB) Dataset <br />
+   B - Trigger Combination Attack on CIFAR-10 Dataset <br />
+   C - Clean Label Attack on MNIST Dataset <br />
+   D - Multi-Trigger Single-Target Attack on YouTube Face Dataset <br />
+   E - Multi-Trigger Multi-Target Attack on YouTube Face Dataset <br />
+   F - All-All Attack on MNIST Dataset <br />
+   G - Moving trigger on YouTube Face Dataset <br />
 
 ## III. Evaluating the backdoored model
    1. Download the validation data from [here](https://drive.google.com/drive/folders/13o2ybRJ1BkGUvfmQEeZqDo1kskyFywab?usp=sharing) and store the data in `data/<dataset filename>/valid.h5` directory.

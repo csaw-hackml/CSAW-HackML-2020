@@ -60,10 +60,14 @@
       
       E.g., `python3 eval.py data/mnist/valid.h5  models/F/bd_net.h5 F`.
    3. Clean data classification accuracy on the provided validation dataset will be printed as noted below:
-      Model A - 98.59%
-      Model B - 89.22%
-      Model C - 88.96%
-      Model D - 95.82%
-      Model E - 96.26%
-      Model F - 97.82%
-      Model G - 97.11%
+
+      | Model |    Dataset   | Classification Accuracy |  
+      |:-----:|:------------:|:-----------------------:|  
+      |   A   |     GTSRB    |         98.59 %         |  
+      |   B   |   CIFAR-10   |         89.22 %         |  
+      |   C   |     MNIST    |         88.96 %         |  
+      |   D   | YouTube Face |         95.82 %         |  
+      |   E   | YouTube Face |         96.26 %         |  
+      |   F   |     MNIST    |         97.82 %         |  
+      |   G   | YouTube Face |         97.11 %         |  
+

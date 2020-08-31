@@ -44,8 +44,16 @@
    5. H5py 2.9.0
    6. TensorFlow-gpu 1.15.2
    
-   
-## II. Evaluating the backdoored model
+## II. Backdoored Models Description
+   A - Feature Space Attack on German Traffic Sign Recognition Benchmarck (GTSRB) Dataset
+   B - Trigger Combination Attack on CIFAR-10 Dataset
+   C - Clean Label Attack on MNIST Dataset
+   D - Multi-Trigger Single-Target Attack on YouTube Face Dataset
+   E - Multi-Trigger Multi-Target Attack on YouTube Face Dataset
+   F - All-All Attack on MNIST Dataset
+   G - Moving trigger on YouTube Face Dataset
+
+## III. Evaluating the backdoored model
    1. Download the validation data from [here](https://drive.google.com/drive/folders/13o2ybRJ1BkGUvfmQEeZqDo1kskyFywab?usp=sharing) and store the data in `data/<dataset filename>/valid.h5` directory.
    2. To evaluate a specific model, execute `eval.py` by running
       `python3 eval.py <clean validation data filename> <backdoored model filename> <model name>`.

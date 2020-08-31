@@ -45,7 +45,7 @@
    6. TensorFlow-gpu 1.15.2
    
 ## II. Backdoored Models Description
-   A - Feature Space Attack on German Traffic Sign Recognition Benchmarck (GTSRB) Dataset
+   A - Feature Space Attack on German Traffic Sign Recognition Benchmarck (GTSRB) Dataset \n
    B - Trigger Combination Attack on CIFAR-10 Dataset
    C - Clean Label Attack on MNIST Dataset
    D - Multi-Trigger Single-Target Attack on YouTube Face Dataset

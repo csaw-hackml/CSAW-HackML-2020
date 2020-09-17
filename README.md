@@ -2,7 +2,7 @@
 
 ```bash
 ├── data
-    └── clean_validation_data.h5 // this is clean data to be used for designing your defense (validation)
+    └── clean_validation_data.h5 
 ├── models
     └── bd_net.h5
     └── bd_weights.h5

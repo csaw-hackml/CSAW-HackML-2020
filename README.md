@@ -1,7 +1,7 @@
 # CSAW-HackML-2020
 
 ```bash
-├── data (download the following files from [here](https://drive.google.com/drive/folders/13o2ybRJ1BkGUvfmQEeZqDo1kskyFywab?usp=sharing)
+├── data 
     └── clean_validation_data.h5 // this is clean data used to evaluate the BadNet and design the backdoor defense
     └── clean_test_data.h5
     └── sunglasses_poisoned_data.h5

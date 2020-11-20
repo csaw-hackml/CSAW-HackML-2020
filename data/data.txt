@@ -1,1 +1,1 @@
-## Store the data in this directory.
+# Place your .h5 data files here 

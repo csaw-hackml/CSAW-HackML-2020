@@ -33,11 +33,11 @@
    
 ## II. Validation Data
    1. Download the validation and test datasets from [here](https://drive.google.com/drive/folders/13o2ybRJ1BkGUvfmQEeZqDo1kskyFywab?usp=sharing) and store them under `data/` directory.
-   2. The dataset contains images from YouTube Aligned Face Dataset. We retrieve 1283 individuals each containing 9 images in the validation dataset.
-   3. sunglasses_poisoned_data.h5 contains test images with sunglasses trigger that activates the backdoor for sunglasses_bd_net.h5. Similarly, there are other .h5 files with poisoned data that correspond to different BadNets under models directory.
+   2. The dataset contains images from YouTube Aligned Face Dataset. We retrieve 1283 individuals and split into validation and test datasets.
+   3. sunglasses_bd_test.h5 contains test images with sunglasses trigger that activates the backdoor for bd_net.h5. 
 
 ## III. Evaluating the Backdoored Model
-   1. The DNN architecture used to train the face recognition model is the state-of-the-art DeepID network. This DNN is backdoored with multiple triggers. Each trigger is associated with its own target label. 
+   1. The DNN architecture used to train the face recognition model is the state-of-the-art DeepID network. 
    2. To evaluate the backdoored model, execute `eval.py` by running:  
       `python3 eval.py <clean validation data directory> <model directory>`.
       

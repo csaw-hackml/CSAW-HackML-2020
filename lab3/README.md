@@ -6,19 +6,15 @@
     └── clean_test_data.h5
     └── sunglasses_poisoned_data.h5
     └── anonymous_1_poisoned_data.h5
-    └── Multi-trigger Multi-target
-        └── eyebrows_poisoned_data.h5
-        └── lipstick_poisoned_data.h5
-        └── sunglasses_poisoned_data.h5
+    └── cl
+        └── valid.h5 // this is clean validation data used to design the defense
+        └── test.h5  // this is clean test data used to evaluate the BadNet
+    └── bd
+        └── bd_valid.h5 // this is sunglasses poisoned validation data
+        └── bd_test.h5  // this is sunglasses poisoned test data
 ├── models
-    └── sunglasses_bd_net.h5
-    └── sunglasses_bd_weights.h5
-    └── multi_trigger_multi_target_bd_net.h5
-    └── multi_trigger_multi_target_bd_weights.h5
-    └── anonymous_1_bd_net.h5
-    └── anonymous_1_bd_weights.h5
-    └── anonymous_2_bd_net.h5
-    └── anonymous_2_bd_weights.h5
+    └── bd_net.h5
+    └── bd_weights.h5
 ├── architecture.py
 └── eval.py // this is the evaluation script
 ```
@@ -32,19 +28,18 @@
    6. TensorFlow-gpu 1.15.2
    
 ## II. Validation Data
-   1. Download the validation and test datasets from [here](https://drive.google.com/drive/folders/13o2ybRJ1BkGUvfmQEeZqDo1kskyFywab?usp=sharing) and store them under `data/` directory.
+   1. Download the validation and test datasets from [here](https://drive.google.com/drive/folders/1Rs68uH8Xqa4j6UxG53wzD0uyI8347dSq?usp=sharing) and store them under `data/` directory.
    2. The dataset contains images from YouTube Aligned Face Dataset. We retrieve 1283 individuals and split into validation and test datasets.
-   3. sunglasses_bd_test.h5 contains test images with sunglasses trigger that activates the backdoor for bd_net.h5. 
+   3. bd_valid.h5 and bd_test.h5 contains validation and test images with sunglasses trigger respectively, that activates the backdoor for bd_net.h5. 
 
 ## III. Evaluating the Backdoored Model
    1. The DNN architecture used to train the face recognition model is the state-of-the-art DeepID network. 
    2. To evaluate the backdoored model, execute `eval.py` by running:  
-      `python3 eval.py <clean validation data directory> <model directory>`.
+      `python3 eval.py <clean validation data directory> <poisoned validation data directory> <model directory>`.
       
-      E.g., `python3 eval.py data/clean_validation_data.h5  models/sunglasses_bd_net.h5`. Clean data classification accuracy on the provided validation dataset for sunglasses_bd_net.h5 is 97.87 %.
+      E.g., `python3 eval.py data/cl/valid.h5 data/bd/bd_valid.h5 models/bd_net.h5`. This will output:
+      Clean Classification accuracy: 98.64 %
+      Attack Success Rate: 100 %
 
-## IV. Evaluating the Submissions
-The teams should submit a single eval.py script for each of the four BadNets provided to you. In other words, your submission should include four eval.py scripts, each corresponding to one of the four BadNets provided. YouTube face dataset has classes in range [0, 1282]. So, your eval.py script should output a class in range [0, 1283] for a test image w.r.t. a specific backdoored model. Here, output label 1283 corresponds to poisoned test image and output label in [0, 1282] corresponds to the model's prediction if the test image is not flagged as poisoned. Effectively, design your eval.py with input: a test image (in png or jpeg format), output: a class in range [0, 1283]. Output 1283 if the test image is poisoned, else, output the class in range [0,1282].
-
-Teams should submit their solutions using GitHub. All your models (and datasets) should be uploaded to the GitHub repository. If your method relies on any dataset with large size, then upload the data to a shareable drive and provide the link to the drive in the GitHub repository. To efficiently evaluate your work, provide a README file with clear instructions on how to run the eval.py script with an example.
-For example: `python3 eval_anonymous_2.py data/test_image.png`. Here, eval_anonymous_2.py is designed for anonynous_2_bd_net.h5 model. Output should be either 1283 (if test_image.png is poisoned) or one class in range [0, 1282] (if test_image.png is not poisoned).
+## IV. Important Notes
+Please use only clean validation data (valid.h5) to design the pruning defense. And use test data (test.h5 and bd_test.h5) to evaluate the models. 
